@@ -104,6 +104,11 @@
 
         function search() {
             let templ = new cv.imread('templateCanvasInput');
+            
+            if (templ.cols > 200) {
+                cv.resize(templ, templ, new cv.Size(), 0.5, 0.5, cv.INTER_AREA);
+            }
+
             let dst = new cv.Mat();
             let mask = new cv.Mat();
             cv.matchTemplate(src, templ, dst, cv.TM_SQDIFF_NORMED, mask);
