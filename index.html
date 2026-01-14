@@ -80,7 +80,7 @@
         cv.then(async (cv) => {
             window.cv = cv;
             console.log(cv.getBuildInformation());
-            await utils.loadImageToCanvas('Felucca_crop.bmp', 'imageCanvasInput');
+            await utils.loadImageToCanvas('Felucca_crop.png', 'imageCanvasInput');
             src = new cv.imread('imageCanvasInput');
         })
 
